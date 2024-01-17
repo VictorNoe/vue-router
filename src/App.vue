@@ -22,7 +22,6 @@
       <b-row>
         <b-col cols="3">
           <b-sidebar 
-          z-index="-1"
           id="sidebar"
           shadow
           visible
@@ -43,6 +42,11 @@
               <b-nav-item>
                 <b-link :to="{ name: 'tercero' }">
                   Option 3
+                </b-link>
+              </b-nav-item>
+              <b-nav-item>
+                <b-link :to="{ name: 'inicio-landpage' }">
+                  Inicio Landpage
                 </b-link>
               </b-nav-item>
             </b-nav>
