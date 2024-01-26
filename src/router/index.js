@@ -9,12 +9,14 @@ const routes = [
         redirect: '/inicio'
     },
     {
-        path: '/',
-        component: {
-            render(c) {
-                return c('router-view')
-            },
-        },
+        path: '*',
+        component: () => import('../components/ErrorPages/Error404.vue')
+    },
+    {
+
+        path: '/inicio',
+        name: 'inicio',
+        component: () => import('../components/Inicio.vue'),
         children: [
             {
                 path: '/inicio',
@@ -66,9 +68,14 @@ const routes = [
                 name: 'proximo-vuelos',
                 component: () => import('../components/ProximosVuelos.vue')
             },
+            {
+                path: '/formulario',
+                name: 'formulario',
+                component: () => import('../components/Formulario.vue')
+            },
         ]
     },
 ];
-    
-const router = new VueRouter({routes,});
+
+const router = new VueRouter({ routes, });
 export default router; 
